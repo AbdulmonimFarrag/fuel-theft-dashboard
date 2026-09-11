@@ -188,6 +188,7 @@ app = dash.Dash(__name__, external_stylesheets=[
     dbc.themes.DARKLY, dbc.icons.FONT_AWESOME,
     "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
 ])
+server = app.server
 app.title = "Fuel Theft Analytics | Petrol Theme"
  
 app.index_string = '''
