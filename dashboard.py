@@ -12,7 +12,10 @@ import datetime
 # ==============================================================
 try:
     df = pd.read_csv('cleaned_fuel_data.csv')
-  df['transaction_date'] = pd.to_datetime(df['transaction_date'], format='mixed')
+    df['transaction_date'] = pd.to_datetime(df['transaction_date'], format='mixed')
+except Exception as e:
+    print(f"An error occurred: {e}")
+    df = pd.DataFrame()
  
     if 'country' not in df.columns:
         countries = ['New Zealand', 'Australia', 'Fiji', 'Papua New Guinea', 'Samoa']
