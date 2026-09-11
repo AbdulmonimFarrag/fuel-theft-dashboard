@@ -600,7 +600,7 @@ def update_dashboard(fuel_type, station_type, start_date, end_date, sel_country,
     urban_share = (urban_theft / total_theft * 100) if total_theft > 0 else 0
     fig_gauge_urban = _gauge_fig(round(urban_share, 1), "%", 100)
  
-          map_data = dff.groupby('country')['theft_flag'].sum().reset_index() if not dff.empty and 'country' in dff.columns else pd.DataFrame(columns=['country', 'theft_flag'])
+    map_data = dff.groupby('country')['theft_flag'].sum().reset_index() if not dff.empty and 'country' in dff.columns else pd.DataFrame(columns=['country', 'theft_flag'])
     map_data['line_color'] = map_data['country'].apply(lambda c: '#ffffff' if c == sel_country else PETROL['border']) if not map_data.empty else []
     map_data['line_width'] = map_data['country'].apply(lambda c: 2.4 if c == sel_country else 0.5) if not map_data.empty else []
 
